@@ -69,3 +69,6 @@ class ReviewSerializer(serializers.ModelSerializer):
             'created_at'
         ]
         read_only_fields = ['review_id', 'created_at']
+=======
+
+>>>>>>> b3d8336415ce7e727b29f871e0303241cf06ba0f
