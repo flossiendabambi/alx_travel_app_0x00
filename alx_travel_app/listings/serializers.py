@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Serializers for the listings app"
 from rest_framework import serializers
 from .models import User, Listing, Booking, Review
 
@@ -28,7 +29,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 # --- Listing Serializer ---
 class ListingSerializer(serializers.ModelSerializer):
-    host = UserSerializer(read_only=True)
+    host = serializer.PrimaryKeyRelatedField(
+    queryset = User.objects.all(),
+    many=True)
 
     class Meta:
         model = Listing
